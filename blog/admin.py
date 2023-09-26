@@ -1,8 +1,6 @@
 from django.contrib import admin
 
-from blog.models import Tag, Post
-
-admin.site.register(Tag)
+from blog.models import Tag, Post, Comment
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -10,4 +8,6 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ("slug", "published_at")
 
 
+admin.site.register(Tag)
 admin.site.register(Post, PostAdmin)
+admin.site.register(Comment)
